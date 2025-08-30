@@ -5,6 +5,7 @@ import { FaBox, FaUsers, FaCogs, FaLifeRing } from "react-icons/fa";
 import { MdTravelExplore, MdStorefront } from "react-icons/md";
 import { RiBankFill } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";   // ✅ Router links
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -60,15 +61,17 @@ export default function Navbar() {
       {/* Container */}
       <div
         ref={menuRef}
-        className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2" // reduced py to remove white gap
+        className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2"
       >
-        {/* Logo */}
+        {/* Logo → Home */}
         <div className="flex items-center gap-2 text-[#1A2B6B] font-bold text-xl">
-          <img
-            src={hi}
-            alt="logo"
-            className="h-8 sm:h-10 w-auto object-contain"
-          />
+          <Link to="/">
+            <img
+              src={hi}
+              alt="logo"
+              className="h-8 sm:h-10 w-auto object-contain cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -161,25 +164,29 @@ export default function Navbar() {
           </div>
 
           {/* Other Menus */}
-          {["Pricing", "Customer Stories", "Resources"].map((item, idx) => (
-            <button key={idx} className="hover:text-[#1A73E8] transition">
-              {item}
-            </button>
-          ))}
+          <Link to="/pricing" className="hover:text-[#1A73E8] transition">
+            Pricing
+          </Link>
+          <Link to="/customer-stories" className="hover:text-[#1A73E8] transition">
+            Customer Stories
+          </Link>
+          <Link to="/resources" className="hover:text-[#1A73E8] transition">
+            Resources
+          </Link>
         </div>
 
-        {/* Desktop Auth → always visible */}
+        {/* Desktop Auth */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="px-4 py-2 border border-[#1A73E8] text-[#1A73E8] rounded-full font-medium hover:bg-[#EAF3FF] transition">
-            Sign in
+          <button className="px-4 py-2 border border-black text-black rounded-full font-medium hover:bg-gray-100 transition">
+            Log in
           </button>
           <a
             href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 bg-gradient-to-r from-[#1A73E8] to-[#0B5ED7] text-white rounded-full font-medium hover:opacity-90 transition"
+            className="px-4 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition"
           >
-           Book a 30-min demo 
+            Book a 30-min demo
           </a>
         </div>
 
@@ -260,16 +267,29 @@ export default function Navbar() {
             </div>
 
             {/* Other Links */}
-            {["Pricing", "Customer Stories", "Resources"].map((item, idx) => (
-              <button
-                key={idx}
-                className="block w-full text-left hover:text-[#1A73E8] transition"
-              >
-                {item}
-              </button>
-            ))}
+            <Link
+              to="/pricing"
+              className="block w-full text-left hover:text-[#1A73E8] transition"
+              onClick={() => setMobileOpen(false)}
+            >
+              Pricing
+            </Link>
+            <Link
+              to="/customer-stories"
+              className="block w-full text-left hover:text-[#1A73E8] transition"
+              onClick={() => setMobileOpen(false)}
+            >
+              Customer Stories
+            </Link>
+            <Link
+              to="/resources"
+              className="block w-full text-left hover:text-[#1A73E8] transition"
+              onClick={() => setMobileOpen(false)}
+            >
+              Resources
+            </Link>
 
-            {/* Auth → always visible in mobile menu */}
+            {/* Auth */}
             <div className="flex flex-col space-y-3 pt-3">
               <button className="px-4 py-2 border border-[#1A73E8] text-[#1A73E8] rounded-full font-medium hover:bg-[#EAF3FF] transition">
                 Sign in
@@ -291,23 +311,17 @@ export default function Navbar() {
       <div className="hidden lg:block w-full bg-[#1A1152] text-white text-sm">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6 py-3">
           <div className="flex items-center gap-2">
-            <span role="img" aria-label="trusted" className="text-blue-300">
-              
-            </span>
-            <span className="text-blue-200">🌟 Redefining Customer Success with AI
-</span>
+            <span className="text-blue-200">🌟 Redefining Customer Success with AI</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-yellow-400"></span>
-            <span className="text-yellow-300 font-medium">🧑‍🤝‍🧑 Built for Success, Support & RevOps teams</span>
+            <span className="text-yellow-300 font-medium">
+              🧑‍🤝‍🧑 Built for Success, Support & RevOps teams
+            </span>
           </div>
           <div className="flex items-center gap-2">
-            <span role="img" aria-label="lock" className="text-purple-300">
-              
-            </span>
             <span className="text-purple-200">🔒 Trusted security and compliance</span>
           </div>
-        </div>
+        </div> 
       </div>
     </nav>
   );

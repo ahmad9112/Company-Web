@@ -14,7 +14,7 @@ import GlobalCommerceHero from '../components/GlobalCommerceHero';
 import DeelIntroSection from '../components/CustomerStoriesBanner.jsx';
 import TuringCustomerStory from '../components/CustomerStoriesBanner.jsx';
 import CustomerStoriesBanner from '../components/CustomerStoriesBanner.jsx';
-import Footer from '../components/Footer.jsx'
+// import Footer from '../components/Footer.jsx'
 
 const Home = () => {
   const [activeFeature, setActiveFeature] = useState("Deel Payroll"); // default tab
@@ -53,7 +53,7 @@ const Home = () => {
         <DeelFeatures />
         <GlobalCommerceHero />
        <CustomerStoriesBanner/>
-       <Footer/>
+       {/* <Footer/> */}
       </div>
     </div>
   );

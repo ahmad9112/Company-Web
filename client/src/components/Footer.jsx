@@ -114,13 +114,13 @@ const ReviewsAndFooter = () => {
         </nav>
 
         {/* Social Icons */}
-        <div className="flex space-x-4 text-gray-400 text-xl">
+        {/* <div className="flex space-x-4 text-gray-400 text-xl">
           <a href="https://x.com/dexkor" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaTwitter /></a>
           <a href="https://linkedin.com/company/dexkor" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaLinkedin /></a>
           <a href="https://facebook.com/dexkor" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaFacebook /></a>
           <a href="https://instagram.com/dexkor" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaInstagram /></a>
           <a href="https://youtube.com/@dexkor" target="_blank" rel="noopener noreferrer" className="hover:text-white"><FaYoutube /></a>
-        </div>
+        </div> */}
       </div>
 
       {/* Divider */}
@@ -150,7 +150,7 @@ const ReviewsAndFooter = () => {
 
           {/* Platform */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Deel Platform</h3>
+            <h3 className="text-white font-semibold mb-4">DexKor Platform</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="#">Customer Success Platform</a></li>
               <li><a href="#">Agentic AI Core</a></li>
@@ -219,7 +219,7 @@ const ReviewsAndFooter = () => {
    <div className="flex space-x-4 mb-4 md:mb-0 text-white">
   {[
     { href: "https://twitter.com", icon: "fa-brands fa-x-twitter" },
-    { href: "https://linkedin.com", icon: "fa-brands fa-linkedin-in" },
+    { href: "https://www.linkedin.com/company/dexkor/posts/?feedView=all", icon: "fa-brands fa-linkedin-in" },
     { href: "https://facebook.com", icon: "fa-brands fa-facebook-f" },
     { href: "https://instagram.com", icon: "fa-brands fa-instagram" },
   ].map((item, i) => (
@@ -247,7 +247,7 @@ const ReviewsAndFooter = () => {
 
   {/* Right side (form) */}
   <div className="w-full md:w-1/3 mt-6 md:mt-0">
-<form className="flex max-w-xl w-full bg-white rounded-full shadow relative ml-6">
+<form className="flex max-w-xl w-full bg-white rounded-full shadow relative md:ml-2">
   <input
     type="email"
     placeholder="What's your e-mail?"
@@ -274,17 +274,22 @@ const ReviewsAndFooter = () => {
 
 
 
-<p className="text-xs text-gray-400 mt-2 ml-8">
+
+<p className="text-xs text-gray-400 mt-2 md:ml-8 text-center md:text-left">
   I confirm that I have read <span className="font-semibold">DexKor’s Privacy Policy</span> and agree with it.
 </p>
 
-  </div>
-</div><div className="mt-6 border-t border-gray-700 pt-1 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+</div>
+</div>
+
+<div className="mt-6 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4 md:gap-0">
   {/* Left side */}
-  <p>© Copyright 2025 DexKor. All Rights Reserved.</p>
+  <p className="text-center md:text-left">
+    © Copyright 2025 DexKor. All Rights Reserved.
+  </p>
 
   {/* Right side links */}
-  <div className="flex space-x-6 mt-4 md:mt-0">
+  <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
     <a href="#" className="hover:text-white">Disclaimer</a>
     <a href="#" className="hover:text-white">Privacy Policy</a>
     <a href="#" className="hover:text-white">Terms of Service</a>
@@ -293,6 +298,7 @@ const ReviewsAndFooter = () => {
     <a href="#" className="hover:text-white">Security & Trust</a>
   </div>
 </div>
+
 
       </div>
     </footer>
