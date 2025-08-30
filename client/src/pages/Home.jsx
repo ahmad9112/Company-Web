@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import FeaturesSection from '../components/FeaturesSection';
-import HRFeaturesSection from '../components/HRFeaturesSection';
+import HrFeaturesSection from "../components/HrFeaturesSection";
 import ITFeaturesSection from '../components/ITFeaturesSection';
 import ServicesFeaturesSection from '../components/ServicesFeaturesSection';
 import OfferSection from '../components/OfferSection';
