@@ -35,13 +35,13 @@ export default function HeroSection() {
     <section className="w-full overflow-hidden font-satoshi">
       {/* Sky Blue Section */}
       <div
-        className="relative bg-[#B5DCFF] pb-20"
+        className="relative bg-[#B5DCFF] pb-16 sm:pb-20"
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 85%, 90% 100%, 10% 95%, 0 100%)",
         }}
       >
         {/* Hero Content */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-12 px-4 sm:px-8 md:px-12 pt-20 sm:pt-28 md:pt-32">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10 sm:gap-12 px-4 sm:px-8 md:px-12 pt-16 sm:pt-24 md:pt-32">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -49,14 +49,14 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 text-center md:text-left"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight mb-6">
               <motion.span
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
-                className="bg-white px-2 inline-block"
+                transition={{ duration: 0.8 }}
+                className="bg-white px-2 inline-block rounded-md"
               >
                 {features[index]}
               </motion.span>
@@ -64,7 +64,7 @@ export default function HeroSection() {
               for global teams
             </h1>
 
-            <p className="text-base sm:text-lg text-gray-700 mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
 
@@ -72,11 +72,11 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
                 href="#"
-                className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition text-center"
+                className="px-5 sm:px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition text-center text-sm sm:text-base"
               >
                 Get a free 30-min demo
               </a>
-              <button className="px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition">
+              <button className="px-5 sm:px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition text-sm sm:text-base">
                 Speak to sales
               </button>
             </div>
@@ -89,7 +89,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 flex justify-center"
           >
-            <div className="relative w-full max-w-[700px] h-auto md:h-[420px] shadow-xl rounded-xl overflow-hidden">
+            <div className="relative w-full max-w-[90%] sm:max-w-[600px] md:max-w-[700px] h-auto aspect-video shadow-xl rounded-xl overflow-hidden">
               <video
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
                 controls
@@ -103,13 +103,15 @@ export default function HeroSection() {
         </div>
 
         {/* Backed By & Trusted By Motion Section */}
-        <div className="mt-16 md:mt-20 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12  pt-8">
+        <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 pt-6 sm:pt-8">
             {/* Backed By */}
             <div className="text-center md:text-left overflow-hidden">
-              <h3 className="text-lg sm:text-xl font-semibold mb-6">Backed By</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
+                Backed By
+              </h3>
               <motion.div
-                className="flex gap-12"
+                className="flex gap-8 sm:gap-12"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", duration: 20, repeat: Infinity }}
               >
@@ -118,7 +120,7 @@ export default function HeroSection() {
                     key={i}
                     src={logo}
                     alt={`backed-logo-${i}`}
-                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                    className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
                   />
                 ))}
               </motion.div>
@@ -126,9 +128,11 @@ export default function HeroSection() {
 
             {/* Trusted By */}
             <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
-              <h3 className="text-lg sm:text-xl font-semibold mb-6">Trusted By</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
+                Trusted By
+              </h3>
               <motion.div
-                className="flex gap-12"
+                className="flex gap-8 sm:gap-12"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", duration: 30, repeat: Infinity }}
               >
@@ -137,7 +141,7 @@ export default function HeroSection() {
                     key={i}
                     src={logo}
                     alt={`trusted-logo-${i}`}
-                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                    className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
                   />
                 ))}
               </motion.div>
@@ -147,8 +151,8 @@ export default function HeroSection() {
       </div>
 
       {/* White Section Below */}
-      <div className="bg-white py-12 sm:py-16 text-center relative z-10 px-4">
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight font-satoshi">
+      <div className="bg-white py-10 sm:py-12 md:py-16 text-center relative z-10 px-4">
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug sm:leading-tight tracking-tight font-satoshi max-w-3xl mx-auto">
           Your OrgGPT for instant
           <br className="hidden sm:block" />
           <span className="text-gray-900">answers and insights.</span>
