@@ -2,7 +2,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-// Import all logos from assets/logo
+// Import all 12 logos
+import logo from "../assets/logo/logo.png";
 import logo1 from "../assets/logo/logo1.png";
 import logo2 from "../assets/logo/logo2.png";
 import logo3 from "../assets/logo/logo3.png";
@@ -10,11 +11,10 @@ import logo4 from "../assets/logo/logo4.png";
 import logo5 from "../assets/logo/logo5.png";
 import logo6 from "../assets/logo/logo6.png";
 import logo7 from "../assets/logo/logo7.png";
-import logo8 from "../assets/logo/logo8.png";
+// import logo8 from "../assets/logo/logo8.png";
 import logo9 from "../assets/logo/logo9.png";
 import logo10 from "../assets/logo/logo10.png";
 import logo11 from "../assets/logo/logo11.png";
-import logoLast from "../assets/logo/logo.png"; // ✅ last logo.png
 
 export default function HeroSection() {
   const features = ["Payroll", "HR", "IT"];
@@ -27,25 +27,13 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  // ✅ Use imported logos
-  const logos = [
-    logo1,
-    logo2,
-    logo3,
-    logo4,
-    logo5,
-    logo6,
-    logo7,
-    logo8,
-    logo9,
-    logo10,
-    logo11,
-    logoLast,
-  ];
+  // Split into Backed By (first 4) & Trusted By (rest)
+  const backedBy = [logo, logo1, logo2, logo3];
+  const trustedBy = [logo4, logo5, logo6, logo7, logo9, logo10, logo11];
 
   return (
     <section className="w-full overflow-hidden font-satoshi">
-      {/* Sky Blue Section with angled bottom */}
+      {/* Sky Blue Section */}
       <div
         className="relative bg-[#B5DCFF] pb-20"
         style={{
@@ -78,17 +66,12 @@ export default function HeroSection() {
 
             <p className="text-base sm:text-lg text-gray-700 mb-8">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem magni blanditiis ipsam, facilis doloremque
-              reprehenderit, vero voluptates alias culpa, pariatur corporis
-              eveniet ea placeat molestiae?
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition text-center"
               >
                 Get a free 30-min demo
@@ -106,7 +89,6 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 flex justify-center"
           >
-            {/* ✅ keep original video size but make it shrink on small screens */}
             <div className="relative w-full max-w-[700px] h-auto md:h-[420px] shadow-xl rounded-xl overflow-hidden">
               <video
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
@@ -120,32 +102,46 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Trusted Companies Section */}
-        <div className="mt-16 md:mt-20 text-center px-4 sm:px-8">
-          <p className="uppercase text-xs sm:text-sm font-medium text-gray-700 tracking-wider mb-8">
-            Backed by industry leaders & built for modern teams from Startups to Enterprise Businesses.
-          </p>
+        {/* Backed By & Trusted By Motion Section */}
+        <div className="mt-16 md:mt-20 px-4 sm:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12  pt-8">
+            {/* Backed By */}
+            <div className="text-center md:text-left overflow-hidden">
+              <h3 className="text-lg sm:text-xl font-semibold mb-6">Backed By</h3>
+              <motion.div
+                className="flex gap-12"
+                animate={{ x: ["0%", "-100%"] }}
+                transition={{ ease: "linear", duration: 20, repeat: Infinity }}
+              >
+                {[...backedBy, ...backedBy].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo}
+                    alt={`backed-logo-${i}`}
+                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                  />
+                ))}
+              </motion.div>
+            </div>
 
-          {/* Infinite Marquee */}
-          <div className="relative w-full overflow-hidden">
-            <motion.div
-              className="flex gap-8 sm:gap-12"
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{
-                ease: "linear",
-                duration: 25,
-                repeat: Infinity,
-              }}
-            >
-              {[...logos, ...logos, ...logos].map((logo, i) => (
-                <img
-                  key={i}
-                  src={logo}
-                  alt={`logo-${i}`}
-                  className="h-6 sm:h-8 md:h-10 w-auto object-contain"
-                />
-              ))}
-            </motion.div>
+            {/* Trusted By */}
+            <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
+              <h3 className="text-lg sm:text-xl font-semibold mb-6">Trusted By</h3>
+              <motion.div
+                className="flex gap-12"
+                animate={{ x: ["0%", "-100%"] }}
+                transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+              >
+                {[...trustedBy, ...trustedBy].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo}
+                    alt={`trusted-logo-${i}`}
+                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                  />
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
