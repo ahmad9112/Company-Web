@@ -23,11 +23,18 @@ export default function GlobalHero() {
           <p className="text-lg text-gray-700 mb-8 max-w-xl">
             DexKor is built to empower organizations of every size — from fast-growing startups to large enterprises. Whether you’re managing complex sales pipelines, onboarding new customers, or driving renewals, DexKor unifies Success, Support, and RevOps into one AI-powered platform. Gain real-time insights, predict risks, and deliver exceptional experiences — all with enterprise-grade security and compliance.
           </p>
+              {/* Button with Link */}
+          <a
+            href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-900 transition">
+              Get started
+            </button>
+          </a>
 
-          {/* Button */}
-          <button className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-900 transition">
-            Get started
-          </button>
+        
         </div>
 
         {/* Right Section (IMAGE) */}

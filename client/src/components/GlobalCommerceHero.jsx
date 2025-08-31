@@ -31,6 +31,14 @@ const ConnectedPlatformHero = () => {
             success at every stage.
           </p>
 
+
+          {/* Button with Link */}
+          <a
+            href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+
           {/* CTA Button */}
           <button className="bg-black text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-800 transition">
             Get started

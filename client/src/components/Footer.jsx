@@ -87,14 +87,14 @@ const ReviewsAndFooter = () => {
 
       {/* Conditions */}
       <div className="max-w-6xl mx-auto text-gray-300 text-sm mb-10 leading-relaxed">
-        <p>
+        {/* <p>
           *Conditions & Eligibility Requirements: This Promotion is subject to
           the following qualifying conditions, and may be modified or revoked by
           DexKor in its sole discretion and without notice at any time. To be
           eligible for this time-limited promotional pricing (“Promotion”), you
           must sign a new qualifying product and services agreement, such as a
           Sales Order Form (“Agreement”) with DexKor by October 31, 2025...
-        </p>
+        </p> */}
       </div>
 
       {/* Links Row */}
@@ -213,7 +213,7 @@ const ReviewsAndFooter = () => {
   <div className="flex flex-col md:flex-row md:items-center w-full md:w-1/2">
     {/* Logo + Socials */}
     <div className="flex flex-col items-center md:items-start">
-      <p className="text-white text-2xl font-bold mb-4">dexkor.</p>
+      <p className="text-white text-2xl font-bold mb-4">DexKor</p>
 
       {/* Social Icons */}
    <div className="flex space-x-4 mb-4 md:mb-0 text-white">

@@ -153,7 +153,9 @@ export default function HeroSection() {
       {/* White Section Below */}
       <div className="bg-white py-10 sm:py-12 md:py-16 text-center relative z-10 px-4">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug sm:leading-tight tracking-tight font-satoshi max-w-3xl mx-auto">
-          Your OrgGPT for instant
+         
+DexKor is your AI-powered Suite for Pre & Post-Sales Success.
+
           <br className="hidden sm:block" />
           <span className="text-gray-900">answers and insights.</span>
         </h2>

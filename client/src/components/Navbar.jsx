@@ -309,13 +309,13 @@ export default function Navbar() {
 
       {/* Trust Bar */}
       <div className="hidden lg:block w-full bg-[#1A1152] text-white text-sm">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6 py-3">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6 py-4">
           <div className="flex items-center gap-2">
             <span className="text-blue-200">🌟 Redefining Customer Success with AI</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-yellow-300 font-medium">
-              🧑‍🤝‍🧑 Built for Success, Support & RevOps teams
+              🧑‍🤝‍🧑 Built for Sales, Support & Success teams
             </span>
           </div>
           <div className="flex items-center gap-2">
