@@ -108,30 +108,31 @@ export default function HeroSection() {
         {/* Logos Section */}
         <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 sm:gap-12 pt-6 sm:pt-8">
-            {/* Backed By (Static Logos) */}
-            <div className="text-center md:text-left">
+            
+            {/* Backed By (Static, Responsive) */}
+            <div className="text-center md:text-left overflow-hidden">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Backed By
               </h3>
-              <div className="flex flex-wrap gap-6 sm:gap-10 justify-center md:justify-start">
+              <div className="flex flex-wrap md:flex-nowrap gap-6 sm:gap-8 md:gap-10 justify-center md:justify-start">
                 {backedBy.map((logo, i) => (
                   <img
                     key={i}
                     src={logo}
                     alt={`backed-logo-${i}`}
-                    className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                    className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
                   />
                 ))}
               </div>
             </div>
 
-            {/* Trusted By (Scrolling Logos) */}
+            {/* Trusted By (Scrolling, Responsive) */}
             <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Trusted By
               </h3>
               <motion.div
-                className="flex gap-8 sm:gap-12"
+                className="flex flex-nowrap whitespace-nowrap gap-6 sm:gap-8 md:gap-10"
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", duration: 30, repeat: Infinity }}
               >
@@ -140,7 +141,7 @@ export default function HeroSection() {
                     key={i}
                     src={logo}
                     alt={`trusted-logo-${i}`}
-                    className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                    className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition inline-block"
                   />
                 ))}
               </motion.div>
