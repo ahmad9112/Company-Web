@@ -109,8 +109,8 @@ export default function HeroSection() {
         <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 sm:gap-12 pt-6 sm:pt-8">
             
-            {/* Backed By (Static, Responsive) */}
-            <div className="text-center md:text-left overflow-hidden">
+            {/* Backed By (Static, Responsive, No Cutoff) */}
+            <div className="text-center md:text-left">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Backed By
               </h3>
@@ -120,13 +120,13 @@ export default function HeroSection() {
                     key={i}
                     src={logo}
                     alt={`backed-logo-${i}`}
-                    className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
+                    className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition"
                   />
                 ))}
               </div>
             </div>
 
-            {/* Trusted By (Scrolling, Responsive) */}
+            {/* Trusted By (Scrolling, Responsive, No Cutoff) */}
             <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Trusted By
@@ -141,7 +141,7 @@ export default function HeroSection() {
                     key={i}
                     src={logo}
                     alt={`trusted-logo-${i}`}
-                    className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition inline-block"
+                    className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition inline-block"
                   />
                 ))}
               </motion.div>
