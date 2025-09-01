@@ -39,9 +39,15 @@ export default function DexKorAdvantage() {
         </p>
 
         {/* CTA Button */}
-        <button className="px-6 py-3 bg-white text-black font-medium rounded-full shadow-md hover:bg-gray-200 transition">
-          Get Started
-        </button>
+        <a
+  href= "https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 bg-white text-black font-medium rounded-full shadow-md hover:bg-gray-200 transition text-sm sm:text-base inline-block"
+>
+  Get Started
+</a>
+
       </div>
     </section>
   );

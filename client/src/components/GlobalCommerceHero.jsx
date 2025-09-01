@@ -33,15 +33,16 @@ const ConnectedPlatformHero = () => {
           </p>
 
           {/* CTA Button with Link */}
-          <a
-            href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="w-full sm:w-auto bg-black text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-800 transition">
-              Get started
-            </button>
-          </a>
+     <a
+  href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full sm:w-auto bg-black text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-800 transition text-center"
+>
+  Get started
+</a>
+
+          
         </div>
       </div>
     </section>

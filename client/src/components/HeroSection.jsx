@@ -72,17 +72,20 @@ export default function HeroSection() {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a
-                href="#"
-                className="px-5 sm:px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition text-center text-sm sm:text-base"
-              >
-                Get a free 30-min demo
-              </a>
-              <button className="px-5 sm:px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition text-sm sm:text-base">
-                Speak to sales
-              </button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+  <a
+    href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 sm:px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition text-center text-sm sm:text-base"
+  >
+    Get a free 30-min demo
+  </a>
+  <button className="px-5 sm:px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+    Speak to sales
+  </button>
+</div>
+
           </motion.div>
 
           {/* Right Video */}
@@ -107,14 +110,14 @@ export default function HeroSection() {
 
         {/* Logos Section */}
         <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 sm:gap-12 pt-6 sm:pt-8">
+          <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-[37%_63%] gap-8 sm:gap-12 pt-6 sm:pt-8">
             
             {/* Backed By (Static, Responsive, No Cutoff) */}
             <div className="text-center md:text-left">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Backed By
               </h3>
-              <div className="flex flex-wrap md:flex-nowrap gap-6 sm:gap-8 md:gap-10 justify-center md:justify-start">
+              <div className="flex flex-wrap md:flex-nowrap gap-5 sm:gap-8 md:gap-10 justify-center md:justify-start">
                 {backedBy.map((logo, i) => (
                   <img
                     key={i}
@@ -127,7 +130,7 @@ export default function HeroSection() {
             </div>
 
             {/* Trusted By (Scrolling, Responsive, No Cutoff) */}
-            <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
+            <div className="text-center md:text-left  md:pl-8 overflow-hidden">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Trusted By
               </h3>
