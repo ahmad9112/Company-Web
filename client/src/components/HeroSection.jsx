@@ -2,8 +2,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-// Import all 12 logos
-import logo from "../assets/logo/logo.png";
+// Import all 11 logos
 import logo1 from "../assets/logo/logo1.png";
 import logo2 from "../assets/logo/logo2.png";
 import logo3 from "../assets/logo/logo3.png";
@@ -11,13 +10,13 @@ import logo4 from "../assets/logo/logo4.png";
 import logo5 from "../assets/logo/logo5.png";
 import logo6 from "../assets/logo/logo6.png";
 import logo7 from "../assets/logo/logo7.png";
-// import logo8 from "../assets/logo/logo8.png";
+import logo8 from "../assets/logo/logo8.png";
 import logo9 from "../assets/logo/logo9.png";
 import logo10 from "../assets/logo/logo10.png";
 import logo11 from "../assets/logo/logo11.png";
 
 export default function HeroSection() {
-  const features = ["Payroll", "HR", "IT"];
+  const features = ["Success", "Support", "Insights", "Recognition", "Growth"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -27,22 +26,22 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [features.length]);
 
-  // Split into Backed By (first 4) & Trusted By (rest)
-  const backedBy = [logo, logo1, logo2, logo3];
-  const trustedBy = [logo4, logo5, logo6, logo7, logo9, logo10, logo11];
+  const backedBy = [logo1, logo2, logo11];
+  const trustedBy = [logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo3];
 
   return (
     <section className="w-full overflow-hidden font-satoshi">
-      {/* Sky Blue Section */}
+      {/* Hero Section (Sky Blue background) */}
       <div
         className="relative bg-[#B5DCFF] pb-16 sm:pb-20"
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 85%, 90% 100%, 10% 95%, 0 100%)",
+          clipPath:
+            "polygon(0 0, 100% 0, 100% 85%, 90% 100%, 10% 95%, 0 100%)",
         }}
       >
         {/* Hero Content */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10 sm:gap-12 px-4 sm:px-8 md:px-12 pt-16 sm:pt-24 md:pt-32">
-          {/* Left */}
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10 px-4 sm:px-8 md:px-12 pt-16 sm:pt-24 md:pt-32">
+          {/* Left Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -61,11 +60,15 @@ export default function HeroSection() {
                 {features[index]}
               </motion.span>
               <br />
-              for global teams
+              for modern teams
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Manage customer health, renewals, and growth with AccountCare.
+              Deliver faster resolutions with AI-powered HelpDesk. Ask Dexy —
+              your OrgGPT for instant knowledge & sentiment insights. Boost
+              employee engagement with StarBoard kudos & rewards. Unify RevOps,
+              CXOps, and TeamOps into one connected platform.
             </p>
 
             {/* Buttons */}
@@ -89,7 +92,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="w-full md:w-1/2 flex justify-center"
           >
-            <div className="relative w-full max-w-[90%] sm:max-w-[600px] md:max-w-[700px] h-auto aspect-video shadow-xl rounded-xl overflow-hidden">
+            <div className="relative w-full max-w-[90%] sm:max-w-[600px] md:max-w-[700px] aspect-video shadow-xl rounded-xl overflow-hidden">
               <video
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
                 controls
@@ -102,20 +105,16 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Backed By & Trusted By Motion Section */}
+        {/* Logos Section */}
         <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 pt-6 sm:pt-8">
-            {/* Backed By */}
-            <div className="text-center md:text-left overflow-hidden">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 sm:gap-12 pt-6 sm:pt-8">
+            {/* Backed By (Static Logos) */}
+            <div className="text-center md:text-left">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Backed By
               </h3>
-              <motion.div
-                className="flex gap-8 sm:gap-12"
-                animate={{ x: ["0%", "-100%"] }}
-                transition={{ ease: "linear", duration: 20, repeat: Infinity }}
-              >
-                {[...backedBy, ...backedBy].map((logo, i) => (
+              <div className="flex flex-wrap gap-6 sm:gap-10 justify-center md:justify-start">
+                {backedBy.map((logo, i) => (
                   <img
                     key={i}
                     src={logo}
@@ -123,10 +122,10 @@ export default function HeroSection() {
                     className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-80 hover:opacity-100 transition"
                   />
                 ))}
-              </motion.div>
+              </div>
             </div>
 
-            {/* Trusted By */}
+            {/* Trusted By (Scrolling Logos) */}
             <div className="text-center md:text-left md:border-l md:pl-8 overflow-hidden">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Trusted By
@@ -150,14 +149,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* White Section Below */}
-      <div className="bg-white py-10 sm:py-12 md:py-16 text-center relative z-10 px-4">
+      {/* White Section */}
+      <div className="bg-[#FFFCF5] py-10 sm:py-12 md:py-16 text-center px-4">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug sm:leading-tight tracking-tight font-satoshi max-w-3xl mx-auto">
-         
-DexKor is your AI-powered Suite for Pre & Post-Sales Success.
-
-          <br className="hidden sm:block" />
-          <span className="text-gray-900">answers and insights.</span>
+          DexKor is your AI-powered Suite for Pre & Post-Sales Success.
         </h2>
       </div>
     </section>

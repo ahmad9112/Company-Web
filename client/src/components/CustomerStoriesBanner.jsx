@@ -34,7 +34,7 @@ const tabsData = {
     img: mergersImg,
     stat: "50+ mergers supported",
     desc: "Deel provides HR & Payroll support for companies undergoing mergers and acquisitions, ensuring seamless employee transitions and compliance.",
-  }
+  },
 };
 
 // MAIN COMPONENT
@@ -64,23 +64,24 @@ const LandingSections = () => {
   return (
     <>
       {/* SECTION 1: Customer Stories FIRST */}
-      <section className="bg-[#FFF7E1] py-16 px-6 text-gray-900">
+      <section className="bg-[#FFF7E1] py-12 md:py-16 px-4 md:px-6 text-gray-900">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-sm font-semibold text-gray-500 mb-2">
+          <h2 className="text-xs md:text-sm font-semibold text-gray-500 mb-2">
             CUSTOMER STORIES
           </h2>
-          <h3 className="text-3xl font-bold mb-6">
-            We’ve helped 35,000+ companies <br />grow and manage global teams.
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+            We’ve helped 35,000+ companies <br className="hidden sm:block" />
+            grow and manage global teams.
           </h3>
 
-          {/* Tabs inside rounded container */}
-          <div className="inline-flex flex-wrap justify-center items-center border border-gray-300 rounded-full px-4 py-3 gap-2 bg-white shadow-sm">
+          {/* Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {Object.keys(tabsData).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 rounded-full font-medium transition ${
+                className={`px-4 md:px-5 py-2 text-sm md:text-base rounded-full font-medium transition ${
                   activeTab === tab
                     ? "bg-black text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -93,7 +94,7 @@ const LandingSections = () => {
         </div>
 
         {/* Image + Stat Block */}
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left: Image */}
           <div>
             <img
@@ -104,10 +105,15 @@ const LandingSections = () => {
           </div>
 
           {/* Right: Stat + Text */}
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4">{stat}</h4>
-            <p className="text-sm text-gray-700 mb-4">{desc}</p>
-            <a href="#" className="text-yellow-600 font-medium hover:underline">
+          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md">
+            <h4 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">
+              {stat}
+            </h4>
+            <p className="text-sm md:text-base text-gray-700 mb-4">{desc}</p>
+            <a
+              href="#"
+              className="text-yellow-600 text-sm md:text-base font-medium hover:underline"
+            >
               Read customer story →
             </a>
           </div>
@@ -115,32 +121,35 @@ const LandingSections = () => {
       </section>
 
       {/* SECTION 2: Three Steps BELOW */}
-      <section className="bg-[#FFF7E1] py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#FFF7E1] py-16 md:py-20 px-4 md:px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left: Text Steps */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Get started with DexKor <br /> in three easy steps
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8">
+              Get started with DexKor <br className="hidden sm:block" /> in
+              three easy steps
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-5 md:space-y-6">
               {steps.map((step, idx) => (
-                <div key={idx} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-200 text-black font-bold flex items-center justify-center">
+                <div key={idx} className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-yellow-200 text-black font-bold flex items-center justify-center text-sm md:text-base">
                     {step.number}
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">
+                    <h4 className="text-base md:text-lg font-semibold text-gray-900">
                       {step.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">{step.desc}</p>
+                    <p className="text-xs md:text-sm lg:text-base text-gray-600">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* CTA Button */}
-            <button className="mt-8 px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition">
+            <button className="mt-6 md:mt-8 px-5 md:px-6 py-2.5 md:py-3 bg-black text-white rounded-full text-sm md:text-base font-medium hover:bg-gray-800 transition">
               Get started
             </button>
           </div>
@@ -150,7 +159,7 @@ const LandingSections = () => {
             <img
               src={etcImg}
               alt="Three steps illustration"
-              className="w-full max-w-md rounded-lg shadow-lg"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg shadow-lg"
             />
           </div>
         </div>

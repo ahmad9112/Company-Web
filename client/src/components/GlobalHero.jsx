@@ -15,7 +15,7 @@ export default function GlobalHero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-           Scale customer success with <br className="hidden md:block" /> speed and intelligence
+           Scale customer success with speed and intelligence<br className="hidden md:block" /> 
 
           </h1>
 
